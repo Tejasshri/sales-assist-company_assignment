@@ -2,6 +2,7 @@ import { useContext } from "react";
 import styles from "./index.module.css";
 import ReactContext from "../../context/ReactContext";
 import { BsBoxArrowUp } from "react-icons/bs";
+import { BiSolidMessageAltError } from "react-icons/bi";
 
 import ProductItem from "../../components/ProductItem";
 import ProductItemPlaceholder from "../ProductItemPlaceholder";
@@ -15,11 +16,21 @@ const apiStatusConstants = {
 };
 
 const ProductSection = () => {
-  const { data, categoryText, apiStatus } = useContext(ReactContext);
+  const { data, categoryText, apiStatus, getData } = useContext(ReactContext);
 
   const filtered = data.filter((each) =>
     each.category.includes(categoryText.toLowerCase())
   );
+
+  const failureView = () => {
+    return (
+      <div className={styles.failureView}>
+        <BiSolidMessageAltError color="red" size={150} />
+        <h1>Oops! Something went wrong</h1>
+        <button onClick={() => getData()}>Try again</button>
+      </div>
+    );
+  };
 
   const laodingView = () => {
     const ls = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -37,7 +48,7 @@ const ProductSection = () => {
       case apiStatusConstants.inprogress:
         return laodingView();
       case apiStatusConstants.failure:
-        return "error";
+        return failureView();
       case apiStatusConstants.success:
         return (
           <>
@@ -54,7 +65,7 @@ const ProductSection = () => {
   return (
     <div className={styles.productSection}>
       <div className={styles.productCategoryDetails}>
-        <p>{categoryText === "" && "All"}</p>
+        <p>{categoryText === "" ? "All" : categoryText}</p>
         <div className={styles.subDetails}>
           {filtered.length}&nbsp; Products &nbsp; <BsBoxArrowUp size={20} />
         </div>

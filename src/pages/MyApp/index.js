@@ -54,6 +54,7 @@ const MyApp = () => {
         data,
         categoryText,
         setCategoryText,
+        getData
       }}>
       <div className={styles.myApp}>
         <Navbar />
