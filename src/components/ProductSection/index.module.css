@@ -1,0 +1,32 @@
+.productSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  flex-grow: 1;
+  /* height: 70vh; */
+}
+
+.productCategoryDetails {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+
+.subDetails {
+  display: flex;
+  align-items: center;
+}
+
+.productItemDetails {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  overflow: auto;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
