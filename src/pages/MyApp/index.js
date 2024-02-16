@@ -12,7 +12,6 @@ import Header from "../../components/Header";
 // Context
 import ReactContext from "../../context/ReactContext";
 
-
 // Axios Instance
 const instance = axios.create({
   baseURL: "https://dummyjson.com",
