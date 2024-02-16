@@ -15,6 +15,10 @@
      <h4>Failure View</h4>
         <img src="https://res.cloudinary.com/dniq4wbom/image/upload/v1708122439/Screenshot_2024-02-17_035648_z8icko.png" height={300}>
     </li>
+     <li>
+     <h4>Mobile View</h4>
+        <img src="https://res.cloudinary.com/dniq4wbom/image/upload/v1708123842/Screenshot_2024-02-17_042004_weddfq.png" height={300}>
+    </li>
 </ul>
 
 <h3>Technologies used</h3>
